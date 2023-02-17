@@ -1,4 +1,4 @@
-nav {
+.primary-nav {
   background-color: aliceblue;
   padding: 1rem;
 }
@@ -7,6 +7,6 @@ nav a {
   text-decoration: none;
 }
 
-nav a:last-child {
+nav a {
   margin-left: 0.8rem;
 }
