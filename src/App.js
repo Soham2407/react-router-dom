@@ -10,6 +10,8 @@ import NewProduct from "./components/NewProduct";
 import Users from "./components/Users";
 import Admin from "./components/Admin";
 import UserDetails from "./components/UserDetails";
+import Login from "./components/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
 
 function App() {
@@ -17,7 +19,14 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
         <Route path="about" element={<About />} />
         <Route path="order-summary" element={<OrderSummery />} />
         <Route path="products" element={<Product />}>
@@ -29,6 +38,7 @@ function App() {
           <Route path=":id" element={<UserDetails />} />
           <Route path="admin" element={<Admin />} />
         </Route>
+        <Route path="login" element={<Login />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </>
